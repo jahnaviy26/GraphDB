@@ -34,4 +34,21 @@ function deleteNode(req: Request, res: Response) {
   }
 }
 
-export { createNode, getNode, deleteNode };
+function updateNode(req: Request, res: Response) {
+   const nodeId = req.params.nodeId;
+   const properties = req.body;
+   if (nodeId === "") {
+    res.status(400).json({ message: "nodeId is not passed in params" });
+   }
+   if (!properties) {
+    res.status(400).json({ message: "properties is not passed in body" });
+   }
+   try {
+    GRAPH.updateNode(nodeId, properties);
+    res.status(200).json({ message: `nodeId is updated ${nodeId}` });
+   } catch (error) {
+     res.status(400).json({ message: error });
+   }
+}
+
+export { createNode, getNode, deleteNode, updateNode };
