@@ -98,6 +98,23 @@ class Graph{
         return neighbors;
     }
 
+    getNode(nodeId: string) {
+        return this.nodes.get(nodeId);
+    }
+    
+    getEdge(edgeId: string) {
+        return this.edges.get(edgeId);
+    }
+
+    updateNode(nodeId: string, properties: Object) {
+        let node = this.getNode(nodeId);
+        this.nodes.set(nodeId, {
+          properties,
+          nodeId: nodeId,
+          inEdges: node.inEdges,
+          outEdges: node.outEdges,
+        });
+    }
 }
 
 const graph = new Graph();
