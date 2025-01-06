@@ -127,22 +127,22 @@ class Graph{
     }
 }
 
-const graph = new Graph();
+// const graph = new Graph();
 
-let node0 = graph.addNodes({ name: "alice" });
-let node1 = graph.addNodes({ name: "bob" });
-let node2 = graph.addNodes({ name: "charlie" });
+// let node0 = graph.addNodes({ name: "alice" });
+// let node1 = graph.addNodes({ name: "bob" });
+// let node2 = graph.addNodes({ name: "charlie" });
 
-let edge0 = graph.addEdge(node0, node1, { type: "friend" });
-let edge1 = graph.addEdge(node1, node2, { type: "sus" });
-let edge2 = graph.addEdge(node2, node0, { type: "son" });
+// let edge0 = graph.addEdge(node0, node1, { type: "friend" });
+// let edge1 = graph.addEdge(node1, node2, { type: "sus" });
+// let edge2 = graph.addEdge(node2, node0, { type: "son" });
 
 
-graph.deleteNode(node0);
-graph.deleteNode(node2);
-graph.deleteNode(node1);
+// graph.deleteNode(node0);
+// graph.deleteNode(node2);
+// graph.deleteNode(node1);
 
-console.log(graph);
+// console.log(graph);
 
 // console.log(graph.getNeighbors(node0)?.inbound)
 // console.log(graph.getNeighbors(node0)?.outbound)

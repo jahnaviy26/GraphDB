@@ -2,7 +2,9 @@ import express from 'express'
 import nodeRouter from './routes/nodeRoutes'
 import edgeRouter from './routes/edgeRoutes'
 const app = express()
-const port = 3003
+const port = 3000;
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

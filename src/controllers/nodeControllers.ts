@@ -62,7 +62,6 @@ function getNeighbors(req: Request, res: Response) {
 }
 
 function findNodes(req: Request, res: Response) {
-    console.log(req.query, "dao;lkmd aslk;m askldm askl md aslkmd asl,m ");
     const { key, value } = req.query;
     if (!key || !value) {
       res.status(400).json({ message: "key or value is not passed in query" });

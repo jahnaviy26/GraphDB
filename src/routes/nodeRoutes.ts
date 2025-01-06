@@ -1,8 +1,5 @@
 import { Router } from "express";
-import Graph from "../graph";
 import { createNode, deleteNode, findNodes, getNeighbors, getNode, updateNode } from "../controllers/nodeControllers";
-
-let GRAPH = new Graph();
 
 const nodeRouter = Router();
 
