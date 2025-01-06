@@ -6,6 +6,10 @@ let GRAPH = new Graph();
 
 const nodeRouter = Router();
 
+nodeRouter.get("/", (req, res) => {
+    res.send("Hello from node routes");
+});
+
 nodeRouter.route("/").post(createNode);
 nodeRouter.route("/find").get(findNodes);
 nodeRouter.route("/:nodeId").get(getNode);

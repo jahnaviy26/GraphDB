@@ -1,1 +1,1 @@
-{"root":["./src/graph.ts","./src/index.ts","./src/controllers/controllers.ts","./src/routes/noderoutes.ts"],"version":"5.7.2"}
+{"root":["./src/graph.ts","./src/index.ts","./src/controllers/edgecontollers.ts","./src/controllers/nodecontrollers.ts","./src/routes/edgeroutes.ts","./src/routes/noderoutes.ts","./src/utils/constants.ts"],"version":"5.7.2"}
