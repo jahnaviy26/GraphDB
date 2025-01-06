@@ -51,4 +51,30 @@ function updateNode(req: Request, res: Response) {
    }
 }
 
-export { createNode, getNode, deleteNode, updateNode };
+function getNeighbors(req: Request, res: Response) {
+    const nodeId = req.params.nodeId;
+    if (nodeId === "") {
+      res.status(400).json({ message: "nodeId is not passed in params" });
+    }
+    let result = GRAPH.getNeighbors(nodeId);
+    if (!result) {
+      res.status(404).json({ message: "node not found" });
+    }
+    res.status(200).json(result);
+}
+
+function findNodes(req: Request, res: Response) {
+    console.log(req.query, "dao;lkmd aslk;m askldm askl md aslkmd asl,m ");
+    const { key, value } = req.query;
+    if (!key || !value) {
+      res.status(400).json({ message: "key or value is not passed in query" });
+    }
+    console.log(key, value);
+    if (typeof key === "string" && typeof value === "string") {
+      let result = GRAPH.findNodes(key, value);
+      console.log(result);
+      res.status(200).json(result);
+    }
+}
+
+export { createNode, getNode, deleteNode, updateNode, getNeighbors, findNodes};

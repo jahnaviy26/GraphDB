@@ -29,6 +29,16 @@ class Graph{
         return nodeId;
     }
 
+    findNodes(propertyKey: string, propertyValue: string) {
+        const results = [];
+        for (const [nodeId, node] of this.nodes) {
+          if (node.properties[propertyKey] === propertyValue) {
+            results.push(node);
+          }
+        }
+        return results;
+      }
+
     addEdge( fromNodeId: string, toNodeId : string, properties : {}){
         if (!this.nodes.has(fromNodeId) || !this.nodes.has(toNodeId)){
             throw new Error("node do not exist");
